@@ -1,0 +1,45 @@
+# Ryan Dennler
+
+original_password = ''
+encoded_password = ''
+
+
+def encode(password):
+    return ''.join(map(lambda x: str((int(x) + 3) % 10), password))
+
+
+def print_menu():
+    print('Menu')
+    print('-------------')
+    print('1. Encode')
+    print('2. Decode')
+    print('3. Quit')
+
+
+def get_option():
+    return input('Please enter an option: ')
+
+
+def process_encode():
+    global original_password, encoded_password
+    original_password = input('Please enter your password to encode: ')
+    encoded_password = encode(original_password)
+    print('Your password has been encoded and stored!')
+
+
+def main():
+    options = {
+        '1': process_encode,
+    }
+
+    while True:
+        print_menu()
+        choice = get_option()
+        if choice == '3':
+            break
+        elif choice in options:
+            options[choice]()
+
+
+if __name__ == "__main__":
+    main()
