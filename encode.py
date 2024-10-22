@@ -29,7 +29,7 @@ def process_encode():
 
 def main():
     options = {
-        '1': process_encode,
+        '1': process_encode, '2':process_decode
     }
 
     while True:
@@ -39,6 +39,21 @@ def main():
             break
         elif choice in options:
             options[choice]()
+
+
+def decode(password):
+    decode = ""
+    for num in password:
+        num = int(num)
+        num -= 3
+        num = str(num)
+        decode += num
+    return decode
+
+def process_decode():
+    global encoded_password
+    print('The encoded password is', encoded_password, end=",")
+    print(' and the original password is', decode(encoded_password), end=".")
 
 
 if __name__ == "__main__":
