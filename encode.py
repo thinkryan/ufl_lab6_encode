@@ -52,8 +52,7 @@ def decode(password):
 
 def process_decode():
     global encoded_password
-    print('The encoded password is', encoded_password, end=",")
-    print(' and the original password is', decode(encoded_password), end=".")
+    print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.")
 
 
 if __name__ == "__main__":
