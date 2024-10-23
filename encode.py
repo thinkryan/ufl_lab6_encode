@@ -14,6 +14,7 @@ def print_menu():
     print('1. Encode')
     print('2. Decode')
     print('3. Quit')
+    print()
 
 
 def get_option():
@@ -39,6 +40,7 @@ def main():
             break
         elif choice in options:
             options[choice]()
+        print()
 
 
 def decode(password):
